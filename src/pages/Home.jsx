@@ -1,14 +1,40 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer';
 
 const Home = () => {
+
+const features = [
+  {
+    id: 1,
+    title: "Track Your Progress",
+    description:
+      "Monitor your daily tasks and visualize your progress in real time to stay focused and motivated.",
+    img: "/progress.png"
+  },
+  {
+    id: 2,
+    title: "Manage Your Task",
+    description:
+      "Organize, prioritize, and manage all your tasks efficiently from a single, easy-to-use dashboard.",
+    img: "/task.png"
+  },
+  {
+    id: 3,
+    title: "Automate Your Task",
+    description:
+      "Save time by automating repetitive tasks and workflows, so you can focus on what truly matters.",
+    img: "/automate.png"
+  }, 
+];
+
   return (
-    <div className='w-full  min-h-screen text-white'  >
-        
-            <Navbar/>
+    <div className='w-full min-h-screen text-white overflow-hidden'>
+        <Navbar/>
+            
       
-      <section className='px-6 sm:px-10 lg:px-20 mt-16 '>
-        <div className='flex flex-col-reverse gap-14 lg:flex-row justify-between items-center'>
+      <section className='w-full py-8 px-4 sm:px-6  mt-12 lg:px-8'>
+        <div className='flex flex-col-reverse gap-8 lg:gap-14 lg:flex-row justify-between items-center max-w-7xl mx-auto'>
             <div className='max-w-xl text-center lg:text-left'>
                 <h2 className=' text-4xl sm:text-5xl leading-tight lg:text-6xl font-black 
             bg-linear-to-r
@@ -25,15 +51,52 @@ const Home = () => {
               </div>
             </div>
             <div className='flex justify-center lg:justify-end w-full lg:w-auto'>
-                <img src="todo.png" alt="Todo illustration" className="
-                w-[220px]
-                sm:w-[280px]
-                lg:w-[340px]
-                drop-shadow-xl
-              "/>
+                <img src="todo.png" alt="Todo illustration" className='w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain'/>
             </div>
         </div>
     </section>
+
+    <section className='w-full py-8 px-4 sm:px-6  mt-5 lg:px-8'>
+      <h2 className='text-center text-4xl font-bold text-blue-500'>What Can You Do?</h2>
+
+      <div className='flex justify-center gap-20 items-center mt-15 flex-wrap'>
+
+        {features.map((feature)=>{
+          
+          return(
+
+            
+            <div key={feature.id} className="w-80 bg-blue-500/10
+    backdrop-blur-lg
+    border border-white/20
+    shadow-xl rounded-xl overflow-hidden  
+            transition duration-500 hover:scale-105 hover:shadow-2xl ">
+
+  {/* Image wrapper */}
+  <div className="w-full h-40 flex items-center justify-center bg-black">
+    <img
+      src={feature.img}
+      alt="Progress"
+      className="max-h-full min-w-full"
+    />
+  </div>
+
+  <div className="p-4">
+    <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
+    <p className="text-sm text-gray-400 mt-1">
+      {feature.description}
+      </p>
+  </div>
+</div>
+      )
+        })}
+
+
+      </div>
+      
+    </section>
+
+    <Footer/>
       </div>
   )
 }

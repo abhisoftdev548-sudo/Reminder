@@ -10,7 +10,7 @@ function App() {
 
   return (
 
-    <div className='min-h-screen w-screen bg-linear-to-b
+    <div className='min-h-screen w-full overflow-x-hidden bg-linear-to-b
   from-[#0b1324]
   via-[#0a1120]
   to-[#070c17]'>
