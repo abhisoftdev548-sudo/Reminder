@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer';
-
+import { Link } from 'react-router-dom';
 const Home = () => {
 
 const features = [
@@ -46,7 +46,9 @@ const features = [
             <p className='mt-6 text-slate-400 text-base sm:text-lg'>Organize your tasks, track progress, and never miss
               important work again with our simple reminder system.</p>
               <div className='mt-8 flex justify-center lg:justify-start gap-4'>
+                <Link to={'/signup'}>
                 <button className='px-6 py-3 font-semibold bg-blue-600 hover:bg-blue-700 rounded-xl transition'> Get Started</button>
+                </Link>
                 <button className='px-6 py-3 font-semibold border border-slate-700 hover:border-slate-500 rounded-xl transition'> Learn More</button>
               </div>
             </div>
