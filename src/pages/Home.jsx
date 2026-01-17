@@ -85,7 +85,7 @@ const features = [
     <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
     <p className="text-sm text-gray-400 mt-1">
       {feature.description}
-      </p>
+      </p> 
   </div>
 </div>
       )
